@@ -3,417 +3,1381 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Himal Neupane | Architecture & Civil Engineering Portfolio</title>
+
 <meta name="description" content="Architectural and Civil Engineering Portfolio of Himal Neupane">
+
+<!-- Open Graph tags so shared links show a nice preview card -->
+<meta property="og:title" content="Himal Neupane | Architecture & Civil Engineering Portfolio">
+<meta property="og:description" content="Architectural and Civil Engineering Portfolio of Himal Neupane - AutoCAD, SketchUp, estimation, 3D visualization.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://neupanehimal05-hash.github.io/neupanehimal05.github.io/">
+<link rel="canonical" href="https://neupanehimal05-hash.github.io/neupanehimal05.github.io/">
+
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: Arial, Helvetica, sans-serif; background: #f7f7f5; color: #222; line-height: 1.6; }
-    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.96); border-bottom: 1px solid #ddd; }
-    .navbar { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 18px 25px; }
-    .logo { font-size: 22px; font-weight: bold; letter-spacing: 1px; }
-    .logo span { font-weight: normal; color: #777; }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { text-decoration: none; color: #222; font-size: 14px; transition: .3s; }
-    .nav-links a:hover { color: #777; }
-    .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(rgba(20, 20, 20, .60), rgba(20, 20, 20, .60)), url("https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat; color: white; }
-    .hero-content { max-width: 1200px; width: 100%; margin: auto; padding: 120px 25px 80px; }
-    .hero small { text-transform: uppercase; letter-spacing: 4px; font-size: 13px; }
-    .hero h1 { font-size: clamp(45px, 7vw, 90px); line-height: 1; margin: 20px 0; font-weight: 500; }
-    .hero p { max-width: 600px; font-size: 18px; color: #eee; }
-    .hero-buttons { margin-top: 35px; }
-    .btn { display: inline-block; padding: 14px 26px; border: 1px solid white; color: white; text-decoration: none; margin-right: 10px; transition: .3s; cursor: pointer; }
-    .btn:hover { background: white; color: #222; }
-    section { padding: 100px 25px; }
-    .container { max-width: 1200px; margin: auto; }
-    .section-title { margin-bottom: 50px; }
-    .section-title small { text-transform: uppercase; letter-spacing: 3px; color: #777; }
-    .section-title h2 { font-size: 45px; font-weight: 500; margin-top: 10px; }
-    .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; align-items: center; }
-    .about img { width: 100%; height: 550px; object-fit: cover; }
-    .about-text h3 { font-size: 32px; margin-bottom: 20px; font-weight: 500; }
-    .about-text p { color: #666; margin-bottom: 18px; }
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
-    .skill { border: 1px solid #ccc; padding: 9px 15px; font-size: 13px; }
-    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 35px; }
-    .filter-btn { background: none; border: 1px solid #ccc; padding: 10px 18px; cursor: pointer; transition: .3s; }
-    .filter-btn:hover, .filter-btn.active { background: #222; color: white; border-color: #222; }
-    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-    .project { background: white; overflow: hidden; cursor: pointer; }
-    .project img { width: 100%; height: 300px; object-fit: cover; display: block; transition: .5s; }
-    .project:hover img { transform: scale(1.04); }
-    .project-info { padding: 20px; }
-    .project-info small { color: #888; text-transform: uppercase; letter-spacing: 1px; }
-    .project-info h3 { margin-top: 5px; font-size: 20px; font-weight: 500; }
-    .project-info p { color: #777; font-size: 14px; margin-top: 5px; }
-    .services { background: #222; color: white; }
-    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #555; }
-    .service { padding: 40px; background: #222; }
-    .service-number { font-size: 13px; color: #aaa; }
-    .service h3 { font-size: 23px; margin: 15px 0; font-weight: 500; }
-    .service p { color: #aaa; font-size: 14px; }
-    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-    .process { border-top: 1px solid #ccc; padding-top: 20px; }
-    .process span { color: #888; }
-    .process h3 { margin: 12px 0; font-weight: 500; }
-    .contact { background: #eee; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-    .contact-info h3 { font-size: 30px; font-weight: 500; margin-bottom: 20px; }
-    .contact-info p { color: #666; margin-bottom: 10px; }
-    .contact-details p { margin-bottom: 12px; font-size: 16px; }
-    .contact-details a { color: #222; text-decoration: none; font-weight: bold; }
-    .contact-details a:hover { text-decoration: underline; }
-    .socials { margin-top: 25px; display: flex; gap: 15px; flex-wrap: wrap; }
-    .socials a { color: white; text-decoration: none; padding: 10px 15px; border-radius: 5px; font-size: 13px; font-weight: bold; }
-    .facebook { background-color: #1877f2; }
-    .whatsapp { background-color: #25d366; }
-    .tiktok { background-color: #000000; }
-    .youtube { background-color: #ff0000; }
-    .socials a:hover { opacity: 0.85; }
-    footer { background: #111; color: #aaa; padding: 30px 25px; text-align: center; font-size: 13px; }
-    .lightbox { position: fixed; inset: 0; background: rgba(0, 0, 0, .9); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
-    .lightbox img { max-width: 95%; max-height: 90%; object-fit: contain; }
-    .close { position: absolute; top: 25px; right: 35px; color: white; font-size: 40px; cursor: pointer; }
-    @media(max-width:900px) {
-        .nav-links { gap: 12px; }
-        .about { grid-template-columns: 1fr; }
-        .project-grid { grid-template-columns: repeat(2, 1fr); }
-        .service-grid { grid-template-columns: 1fr; }
-        .process-grid { grid-template-columns: repeat(2, 1fr); }
-        .contact-grid { grid-template-columns: 1fr; }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f7f7f5;
+    color:#222;
+    line-height:1.6;
+}
+
+/* NAVIGATION */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,0.96);
+    border-bottom:1px solid #ddd;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.logo span{
+    font-weight:normal;
+    color:#777;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#777;
+}
+
+.nav-share-btn{
+    background:none;
+    border:1px solid #222;
+    padding:8px 16px;
+    font-size:13px;
+    cursor:pointer;
+    transition:.3s;
+    font-family:inherit;
+}
+
+.nav-share-btn:hover{
+    background:#222;
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(20,20,20,.60),rgba(20,20,20,.60)),
+    url("https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat;
+    color:white;
+}
+
+.hero-content{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    padding:120px 25px 80px;
+}
+
+.hero small{
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:13px;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,90px);
+    line-height:1;
+    margin:20px 0;
+    font-weight:500;
+}
+
+.hero p{
+    max-width:600px;
+    font-size:18px;
+    color:#eee;
+}
+
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 26px;
+    border:1px solid white;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+    background:none;
+    font-family:inherit;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:white;
+    color:#222;
+}
+
+/* GENERAL */
+
+section{
+    padding:100px 25px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    margin-bottom:50px;
+}
+
+.section-title small{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    color:#777;
+}
+
+.section-title h2{
+    font-size:45px;
+    font-weight:500;
+    margin-top:10px;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    height:550px;
+    object-fit:cover;
+    background:#ddd;
+}
+
+.about-text h3{
+    font-size:32px;
+    margin-bottom:20px;
+    font-weight:500;
+}
+
+.about-text p{
+    color:#666;
+    margin-bottom:18px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:25px;
+}
+
+.skill{
+    border:1px solid #ccc;
+    padding:9px 15px;
+    font-size:13px;
+}
+
+/* FILTER */
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:35px;
+}
+
+.filter-btn{
+    background:none;
+    border:1px solid #ccc;
+    padding:10px 18px;
+    cursor:pointer;
+    font-family:inherit;
+    transition:.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#222;
+    color:white;
+    border-color:#222;
+}
+
+/* PROJECT GRID */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project{
+    background:white;
+    overflow:hidden;
+    cursor:pointer;
+    position:relative;
+}
+
+.project img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+    background:#e5e5e2;
+}
+
+.project:hover img{
+    transform:scale(1.04);
+}
+
+.project-info{
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.project-info small{
+    color:#888;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.project-info h3{
+    margin-top:5px;
+    font-size:20px;
+    font-weight:500;
+}
+
+.project-info p{
+    color:#777;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.project-share{
+    border:1px solid #ccc;
+    background:white;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    cursor:pointer;
+    flex-shrink:0;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+}
+
+.project-share:hover{
+    background:#222;
+    color:white;
+    border-color:#222;
+}
+
+/* SERVICES */
+
+.services{
+    background:#222;
+    color:white;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:#555;
+}
+
+.service{
+    padding:40px;
+    background:#222;
+}
+
+.service-number{
+    font-size:13px;
+    color:#aaa;
+}
+
+.service h3{
+    font-size:23px;
+    margin:15px 0;
+    font-weight:500;
+}
+
+.service p{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* PROCESS */
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.process{
+    border-top:1px solid #ccc;
+    padding-top:20px;
+}
+
+.process span{
+    color:#888;
+}
+
+.process h3{
+    margin:12px 0;
+    font-weight:500;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#eee;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.contact-info h3{
+    font-size:30px;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    color:#666;
+    margin-bottom:10px;
+}
+
+.contact-details p{
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.contact-details a{
+    color:#222;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.contact-details a:hover{
+    text-decoration:underline;
+}
+
+.socials{
+    margin-top:25px;
+}
+
+.socials a{
+    color:#222;
+    text-decoration:none;
+    margin-right:20px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:#aaa;
+    padding:30px 25px;
+    text-align:center;
+    font-size:13px;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+    padding:20px;
+}
+
+.lightbox img{
+    max-width:95%;
+    max-height:90%;
+    object-fit:contain;
+}
+
+.close{
+    position:absolute;
+    top:25px;
+    right:35px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.lightbox-share{
+    position:absolute;
+    bottom:25px;
+    right:35px;
+    color:white;
+    border:1px solid white;
+    background:none;
+    padding:10px 18px;
+    font-size:14px;
+    cursor:pointer;
+    font-family:inherit;
+    transition:.3s;
+}
+
+.lightbox-share:hover{
+    background:white;
+    color:#222;
+}
+
+/* TOAST (for "link copied" confirmation) */
+
+.toast{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:#222;
+    color:white;
+    padding:12px 22px;
+    font-size:14px;
+    border-radius:4px;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    z-index:3000;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        gap:12px;
     }
-    @media(max-width:600px) {
-        .navbar { padding: 15px; }
-        .logo { font-size: 18px; }
-        .nav-links { display: none; }
-        section { padding: 70px 18px; }
-        .hero-content { padding: 120px 18px 60px; }
-        .hero h1 { font-size: 50px; }
-        .project-grid { grid-template-columns: 1fr; }
-        .process-grid { grid-template-columns: 1fr; }
-        .about img { height: 400px; }
+
+    .about{
+        grid-template-columns:1fr;
     }
+
+    .project-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .nav-links a:not(.nav-share-btn){
+        display:none;
+    }
+
+    section{
+        padding:70px 18px;
+    }
+
+    .hero-content{
+        padding:120px 18px 60px;
+    }
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about img{
+        height:400px;
+    }
+}
+
 </style>
 </head>
+
+
 <body>
 
+
 <!-- NAVIGATION -->
+
 <header>
-    <nav class="navbar">
-        <div class="logo">HIMAL <span>NEUPANE</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><button class="btn" style="padding: 5px 10px; font-size: 12px; margin-top: -5px;" id="share-btn">Share Site</button></li>
-        </ul>
-    </nav>
-</header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <small>Architecture • Civil Engineering • Visualization</small>
-        <h1>Designing<br>Spaces & Structures</h1>
-        <p>Architectural and Civil Engineering portfolio showcasing AutoCAD drawings, building plans, sections, elevations, 3D visualization, estimation and design projects.</p>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="#contact" class="btn">Contact Me</a>
-        </div>
-    </div>
-</section>
+<nav class="navbar">
 
-<!-- ABOUT -->
-<section id="about">
-    <div class="container">
-        <div class="section-title">
-            <small>About Me</small>
-            <h2>Architecture & Civil Engineering</h2>
-        </div>
-        <div class="about">
-            <div><img src="images/profile.jpg" alt="Himal Neupane"></div>
-            <div class="about-text">
-                <h3>Hello, I'm Himal Neupane.</h3>
-                <p>I am a Civil Engineering student interested in architectural design, civil engineering, CAD drafting, cost estimation and 3D visualization.</p>
-                <p>My portfolio focuses on practical building design, AutoCAD drafting, floor plans, sections, elevations, quantity surveying, cost estimation, interior and exterior visualization.</p>
-                <div class="skills">
-                    <div class="skill">AutoCAD</div>
-                    <div class="skill">SketchUp</div>
-                    <div class="skill">Enscape</div>
-                    <div class="skill">Architectural Design</div>
-                    <div class="skill">Civil Engineering</div>
-                    <div class="skill">Construction Estimation</div>
-                    <div class="skill">Costing & Valuation</div>
-                    <div class="skill">3D Visualization</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-    <div class="container">
-        <div class="section-title">
-            <small>Selected Work</small>
-            <h2>My Projects</h2>
-        </div>
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterProjects(event, 'all')">All</button>
-            <button class="filter-btn" onclick="filterProjects(event, 'architecture')">Architecture</button>
-            <button class="filter-btn" onclick="filterProjects(event, 'autocad')">AutoCAD</button>
-            <button class="filter-btn" onclick="filterProjects(event, 'civil')">Civil Engineering</button>
-            <button class="filter-btn" onclick="filterProjects(event, 'estimation')">Estimation & Costing</button>
-            <button class="filter-btn" onclick="filterProjects(event, '3d')">3D Visualization</button>
-            <button class="filter-btn" onclick="filterProjects(event, 'interior')">Interior</button>
-        </div>
-        <div class="project-grid">
-            <div class="project architecture autocad" onclick="openImage('images/project1.jpg')">
-                <img src="images/project1.jpg" alt="Residential House Plan">
-                <div class="project-info">
-                    <small>Architecture / AutoCAD</small>
-                    <h3>Residential House Plan</h3>
-                    <p>Floor plan, dimensions and architectural layout.</p>
-                </div>
-            </div>
-            <div class="project autocad" onclick="openImage('images/project2.jpg')">
-                <img src="images/project2.jpg" alt="Building Section">
-                <div class="project-info">
-                    <small>AutoCAD</small>
-                    <h3>Building Section</h3>
-                    <p>Detailed building section with structural elements.</p>
-                </div>
-            </div>
-            <div class="project autocad architecture" onclick="openImage('images/project3.jpg')">
-                <img src="images/project3.jpg" alt="Building Elevation">
-                <div class="project-info">
-                    <small>Architecture</small>
-                    <h3>Building Elevation</h3>
-                    <p>Front elevation and architectural facade design.</p>
-                </div>
-            </div>
-            <div class="project civil" onclick="openImage('images/project4.jpg')">
-                <img src="images/project4.jpg" alt="Structural Drawing">
-                <div class="project-info">
-                    <small>Civil Engineering</small>
-                    <h3>Structural Drawing</h3>
-                    <p>Structural planning and engineering drawing.</p>
-                </div>
-            </div>
-            <div class="project estimation civil" onclick="openImage('images/project5.jpg')">
-                <img src="images/project5.jpg" alt="Building Quantity Estimation">
-                <div class="project-info">
-                    <small>Estimation & Costing</small>
-                    <h3>Building Quantity Estimation</h3>
-                    <p>Detailed quantity take-off, material calculation, and cost estimation.</p>
-                </div>
-            </div>
-            <div class="project 3d" onclick="openImage('images/project6.jpg')">
-                <img src="images/project6.jpg" alt="Exterior Visualization">
-                <div class="project-info">
-                    <small>3D Visualization</small>
-                    <h3>Exterior Visualization</h3>
-                    <p>3D exterior model and realistic rendering.</p>
-                </div>
-            </div>
-            <div class="project interior 3d" onclick="openImage('images/project7.jpg')">
-                <img src="images/project7.jpg" alt="Living Room Design">
-                <div class="project-info">
-                    <small>Interior Design</small>
-                    <h3>Living Room Design</h3>
-                    <p>Interior modeling and visualization.</p>
-                </div>
-            </div>
-            <div class="project architecture" onclick="openImage('images/project8.jpg')">
-                <img src="images/project8.jpg" alt="Residential Design">
-                <div class="project-info">
-                    <small>Architecture</small>
-                    <h3>Residential Design</h3>
-                    <p>Complete architectural concept and planning.</p>
-                </div>
-            </div>
-            <div class="project civil" onclick="openImage('images/project9.jpg')">
-                <img src="images/project9.jpg" alt="Site Development Plan">
-                <div class="project-info">
-                    <small>Civil Engineering</small>
-                    <h3>Site Development Plan</h3>
-                    <p>Site planning and civil engineering layout.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-    <div class="container">
-        <div class="section-title">
-            <small>What I Do</small>
-            <h2>Services</h2>
-        </div>
-        <div class="service-grid">
-            <div class="service">
-                <span class="service-number">01</span>
-                <h3>Architectural Drafting</h3>
-                <p>2D floor plans, sections, elevations, working drawings and architectural layouts.</p>
-            </div>
-            <div class="service">
-                <span class="service-number">02</span>
-                <h3>AutoCAD Drafting</h3>
-                <p>Professional CAD drawings with layers, dimensions, annotations and clean presentation.</p>
-            </div>
-            <div class="service">
-                <span class="service-number">03</span>
-                <h3>Construction Estimation</h3>
-                <p>Detailed quantity takeoff, material calculation, rate analysis, and budget estimation for construction projects.</p>
-            </div>
-            <div class="service">
-                <span class="service-number">04</span>
-                <h3>3D Visualization</h3>
-                <p>SketchUp modeling and realistic exterior and interior visualization.</p>
-            </div>
-            <div class="service">
-                <span class="service-number">05</span>
-                <h3>Civil Engineering</h3>
-                <p>Civil drawings, site plans, structural layouts and engineering documentation.</p>
-            </div>
-            <div class="service">
-                <span class="service-number">06</span>
-                <h3>Interior & Exterior Design</h3>
-                <p>Interior planning, furniture layouts, building facade concepts, materials, and 3D rendering.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PROCESS -->
-<section>
-    <div class="container">
-        <div class="section-title">
-            <small>My Workflow</small>
-            <h2>Design Process</h2>
-        </div>
-        <div class="process-grid">
-            <div class="process">
-                <span>01</span>
-                <h3>Understand</h3>
-                <p>Understand the project requirements, site and client's ideas.</p>
-            </div>
-            <div class="process">
-                <span>02</span>
-                <h3>Plan</h3>
-                <p>Develop layouts, dimensions and architectural concepts.</p>
-            </div>
-            <div class="process">
-                <span>03</span>
-                <h3>Develop & Estimate</h3>
-                <p>Create detailed CAD drawings, quantity estimates, and 3D models.</p>
-            </div>
-            <div class="process">
-                <span>04</span>
-                <h3>Present</h3>
-                <p>Prepare clean drawings, cost breakdown reports, renders and professional presentation.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <div class="container">
-        <div class="section-title">
-            <small>Get In Touch</small>
-            <h2>Let's Work Together</h2>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Have a project in mind?</h3>
-                <p>I'm interested in architectural drafting, civil engineering drawings, construction estimation, CAD projects and 3D visualization.</p>
-                <div class="contact-details" style="margin-top: 20px;">
-                    <p>📍 Location: Ghorahi, Dang, Nepal</p>
-                    <p>📧 Email: <a href="mailto:neupanehimal05@gmail.com">neupanehimal05@gmail.com</a></p>
-                    <p>💬 WhatsApp: <a href="https://wa.me/9779769260505" target="_blank">+977 9769260505</a></p>
-                </div>
-                <div class="socials">
-                    <a href="https://facebook.com" target="_blank" class="facebook">Facebook</a>
-                    <a href="https://wa.me/9779769260505" target="_blank" class="whatsapp">WhatsApp</a>
-                    <a href="#" target="_blank" class="youtube">YouTube</a>
-                    <a href="#" target="_blank" class="tiktok">TikTok</a>
-                </div>
-            </div>
-            <div>
-                <p>For project inquiries, freelance work, or collaboration, feel free to contact me directly via Email or WhatsApp.</p>
-                <br>
-                <a href="https://wa.me/9779769260505" class="btn" style="background:#25D366;color:white;border-color:#25D366;margin-bottom:10px;">Chat on WhatsApp</a>
-                <a href="mailto:neupanehimal05@gmail.com" class="btn" style="background:#222;color:white;border-color:#222;">Send Email</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    © 2026 Himal Neupane — Architecture & Civil Engineering Portfolio
-</footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-    <div class="close" onclick="closeImage()">×</div>
-    <img id="lightbox-img" src="" alt="Project Preview">
+<div class="logo">
+HIMAL <span>NEUPANE</span>
 </div>
 
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><button class="nav-share-btn" onclick="shareSite()">Share ↗</button></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<small>Architecture • Civil Engineering • Visualization</small>
+
+<h1>
+Designing<br>
+Spaces & Structures
+</h1>
+
+<p>
+Architectural and Civil Engineering portfolio showcasing
+AutoCAD drawings, building plans, sections, elevations,
+3D visualization, estimation and design projects.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn">View Projects</a>
+
+<a href="#contact" class="btn">Contact Me</a>
+
+<button class="btn" onclick="shareSite()">Share Portfolio</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>About Me</small>
+
+<h2>Architecture & Civil Engineering</h2>
+
+</div>
+
+
+<div class="about">
+
+<div>
+
+<img src="images/profile.jpg" alt="Himal Neupane">
+
+</div>
+
+
+<div class="about-text">
+
+<h3>Hello, I'm Himal Neupane.</h3>
+
+<p>
+I am a Civil Engineering student interested in architectural
+design, civil engineering, CAD drafting, cost estimation and 3D visualization.
+</p>
+
+<p>
+My portfolio focuses on practical building design,
+AutoCAD drafting, floor plans, sections, elevations,
+quantity surveying, cost estimation, interior and exterior visualization.
+</p>
+
+<p>
+I enjoy transforming ideas and sketches into clear,
+professional and functional drawings along with accurate material estimation.
+</p>
+
+
+<div class="skills">
+
+<div class="skill">AutoCAD</div>
+<div class="skill">SketchUp</div>
+<div class="skill">Enscape</div>
+<div class="skill">Structural Analysis</div>
+<div class="skill">Architectural Design</div>
+<div class="skill">Civil Engineering</div>
+<div class="skill">Construction Estimation</div>
+<div class="skill">Costing & Valuation</div>
+<div class="skill">3D Visualization</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>Selected Work</small>
+
+<h2>My Projects</h2>
+
+</div>
+
+
+<div class="filters">
+
+<button class="filter-btn active" onclick="filterProjects(event,'all')">
+All
+</button>
+
+<button class="filter-btn" onclick="filterProjects(event,'architecture')">
+Architecture
+</button>
+
+<button class="filter-btn" onclick="filterProjects(event,'autocad')">
+AutoCAD
+</button>
+
+<button class="filter-btn" onclick="filterProjects(event,'civil')">
+Civil Engineering
+</button>
+
+<button class="filter-btn" onclick="filterProjects(event,'estimation')">
+Estimation & Costing
+</button>
+
+<button class="filter-btn" onclick="filterProjects(event,'3d')">
+3D Visualization
+</button>
+
+<button class="filter-btn" onclick="filterProjects(event,'interior')">
+Interior
+</button>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- PROJECT 1 -->
+
+<div class="project architecture autocad" data-title="Residential House Plan">
+
+<img src="images/project1.jpg" onclick="openImage('images/project1.jpg','Residential House Plan')">
+
+<div class="project-info">
+<div>
+<small>Architecture / AutoCAD</small>
+<h3>Residential House Plan</h3>
+<p>Floor plan, dimensions and architectural layout.</p>
+</div>
+<button class="project-share" title="Share this project" onclick="shareProject(event,'Residential House Plan')">↗</button>
+</div>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="project autocad" data-title="Building Section">
+
+<img src="images/project2.jpg" onclick="openImage('images/project2.jpg','Building Section')">
+
+<div class="project-info">
+<div>
+<small>AutoCAD</small>
+<h3>Building Section</h3>
+<p>Detailed building section with structural elements.</p>
+</div>
+<button class="project-share" title="Share this project" onclick="shareProject(event,'Building Section')">↗</button>
+</div>
+
+</div>
+
+
+<!-- PROJECT 3 -->
+
+<div class="project autocad architecture" data-title="Building Elevation">
+
+<img src="images/project3.jpg" onclick="openImage('images/project3.jpg','Building Elevation')">
+
+<div class="project-info">
+<div>
+<small>Architecture</small>
+<h3>Building Elevation</h3>
+<p>Front elevation and architectural facade design.</p>
+</div>
+<button class="project-share" title="Share this project" onclick="shareProject(event,'Building Elevation')">↗</button>
+</div>
+
+</div>
+
+
+<!-- PROJECT 4 -->
+
+<div class="project civil" data-title="Structural Drawing">
+
+<img src="images/project4.jpg" onclick="openImage('images/project4.jpg','Structural Drawing')">
+
+<div class="project-info">
+<div>
+<small>Civil Engineering</small>
+<h3>Structural Drawing</h3>
+<p>Structural planning and engineering drawing.</p>
+</div>
+<button class="project-share" title="Share this project" onclick="shareProject(event,'Structural Drawing')">↗</button>
+</div>
+
+</div>
+
+
+<!-- PROJECT 5 -->
+
+<div class="project estimation civil" data-title="Building Quantity Estimation">
+
+<img src="images/project5.jpg" onclick="openImage('images/project5.jpg','Building Quantity Estimation')">
+
+<div class="project-info">
+<div>
+<small>Estimation & Costing</small>
+<h3>Building Quantity Estimation</h3>
+<p>Detailed quantity take-off, material calculation, and cost estimation.</p>
+</div>
+<button class="project-share" title="Share this project" onclick="shareProject(event,'Building Quantity Estimation')">↗</button>
+</div>
+
+</div>
+
+
+<!-- PROJECT 6 -->
+
+<div class="project 3d" data-title="Exterior Visualization">
+
+<img src="images/project6.jpg" onclick="openImage('images/project6.jpg','Exterior Visualization')">
+
+<div class="project-info">
+<div>
+<small>3D Visualization</small>
+<h3>Exterior Visualization</h3>
+<p>3D exterior model and realistic rendering.</p>
+</div>
+<button class="project-share" title="Share this project" onclick="shareProject(event,'Exterior Visualization')">↗</button>
+</div>
+
+</div>
+
+
+<!-- PROJECT 7 -->
+
+<div class="project interior 3d" data-title="Living Room Design">
+
+<img src="images/project7.jpg" onclick="openImage('images/project7.jpg','Living Room Design')">
+
+<div class="project-info">
+<div>
+<small>Interior Design</small>
+<h3>Living Room Design</h3>
+<p>Interior modeling and visualization.</p>
+</div>
+<button class="project-share" title="Share this project" onclick="shareProject(event,'Living Room Design')">↗</button>
+</div>
+
+</div>
+
+
+<!-- PROJECT 8 -->
+
+<div class="project architecture" data-title="Residential Design">
+
+<img src="images/project8.jpg" onclick="openImage('images/project8.jpg','Residential Design')">
+
+<div class="project-info">
+<div>
+<small>Architecture</small>
+<h3>Residential Design</h3>
+<p>Complete architectural concept and planning.</p>
+</div>
+<button class="project-share" title="Share this project" onclick="shareProject(event,'Residential Design')">↗</button>
+</div>
+
+</div>
+
+
+<!-- PROJECT 9 -->
+
+<div class="project civil" data-title="Site Development Plan">
+
+<img src="images/project9.jpg" onclick="openImage('images/project9.jpg','Site Development Plan')">
+
+<div class="project-info">
+<div>
+<small>Civil Engineering</small>
+<h3>Site Development Plan</h3>
+<p>Site planning and civil engineering layout.</p>
+</div>
+<button class="project-share" title="Share this project" onclick="shareProject(event,'Site Development Plan')">↗</button>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>What I Do</small>
+
+<h2>Services</h2>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<div class="service">
+
+<span class="service-number">01</span>
+
+<h3>Architectural Drafting</h3>
+
+<p>
+2D floor plans, sections, elevations,
+working drawings and architectural layouts.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<span class="service-number">02</span>
+
+<h3>AutoCAD Drafting</h3>
+
+<p>
+Professional CAD drawings with layers,
+dimensions, annotations and clean presentation.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<span class="service-number">03</span>
+
+<h3>Construction Estimation</h3>
+
+<p>
+Detailed quantity takeoff, material calculation,
+rate analysis, and budget estimation for construction projects.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<span class="service-number">04</span>
+
+<h3>3D Visualization</h3>
+
+<p>
+SketchUp modeling and realistic exterior
+and interior visualization.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<span class="service-number">05</span>
+
+<h3>Civil Engineering</h3>
+
+<p>
+Civil drawings, site plans, structural layouts
+and engineering documentation.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<span class="service-number">06</span>
+
+<h3>Interior & Exterior Design</h3>
+
+<p>
+Interior planning, furniture layouts, building facade concepts,
+materials, and 3D rendering.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<small>My Workflow</small>
+
+<h2>Design Process</h2>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process">
+
+<span>01</span>
+
+<h3>Understand</h3>
+
+<p>
+Understand the project requirements,
+site and client's ideas.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<span>02</span>
+
+<h3>Plan</h3>
+
+<p>
+Develop layouts, dimensions and
+architectural concepts.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<span>03</span>
+
+<h3>Develop & Estimate</h3>
+
+<p>
+Create detailed CAD drawings, quantity estimates,
+and 3D models.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<span>04</span>
+
+<h3>Present</h3>
+
+<p>
+Prepare clean drawings, cost breakdown reports, renders and
+professional presentation.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>Get In Touch</small>
+
+<h2>Let's Work Together</h2>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-info">
+
+<h3>
+Have a project in mind?
+</h3>
+
+<p>
+I'm interested in architectural drafting,
+civil engineering drawings, construction estimation, CAD projects
+and 3D visualization.
+</p>
+
+<div class="contact-details" style="margin-top: 20px;">
+<p>📍 Location: Ghorahi, Dang, Nepal</p>
+<p>📧 Email: <a href="mailto:neupanehimal05@gmail.com">neupanehimal05@gmail.com</a></p>
+<p>💬 WhatsApp: <a href="https://wa.me/9779769260505" target="_blank">+977 9769260505</a></p>
+</div>
+
+<div class="socials">
+
+<a href="https://facebook.com" target="_blank">Facebook</a>
+
+<a href="https://wa.me/9779769260505" target="_blank">WhatsApp</a>
+
+<a href="https://youtube.com/@h.nengineeringworks?si=nzJ8guH-uD0_UUSd" target="_blank">YouTube</a>
+
+<a href="https://www.tiktok.com/@himal..neupane?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+
+<a href="#" target="_blank">LinkedIn</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<p>
+For project inquiries, freelance work,
+or collaboration, feel free to contact me directly via Email or WhatsApp.
+</p>
+
+<br>
+
+<a href="https://wa.me/9779769260505" class="btn"
+style="background:#25D366;color:white;border-color:#25D366;margin-bottom:10px;">
+Chat on WhatsApp
+</a>
+
+<a href="mailto:neupanehimal05@gmail.com" class="btn"
+style="background:#222;color:white;border-color:#222;">
+Send Email
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Himal Neupane — Architecture & Civil Engineering Portfolio
+
+</footer>
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<div class="close" onclick="closeImage()">×</div>
+
+<img id="lightbox-img" src="">
+
+<button class="lightbox-share" onclick="shareProject(event,currentLightboxTitle)">Share this ↗</button>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">Link copied!</div>
+
+
 <script>
-    /* PROJECT FILTER */
-    function filterProjects(e, category) {
-        const projects = document.querySelectorAll(".project");
-        const buttons = document.querySelectorAll(".filter-btn");
 
-        buttons.forEach(btn => btn.classList.remove("active"));
-        e.target.classList.add("active");
+/* PROJECT FILTER */
 
-        projects.forEach(project => {
-            if (category === "all" || project.classList.contains(category)) {
+function filterProjects(e,category){
+
+    const projects = document.querySelectorAll(".project");
+    const buttons = document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    e.target.classList.add("active");
+
+    projects.forEach(project => {
+
+        if(category === "all"){
+
+            project.style.display = "block";
+
+        }else{
+
+            if(project.classList.contains(category)){
                 project.style.display = "block";
-            } else {
+            }else{
                 project.style.display = "none";
             }
+
+        }
+
+    });
+
+}
+
+
+/* IMAGE LIGHTBOX */
+
+let currentLightboxTitle = "";
+
+function openImage(image,title){
+
+    document.getElementById("lightbox").style.display="flex";
+
+    document.getElementById("lightbox-img").src=image;
+
+    currentLightboxTitle = title || "";
+
+}
+
+function closeImage(){
+
+    document.getElementById("lightbox").style.display="none";
+
+}
+
+
+/* CLOSE LIGHTBOX WITH ESC */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "Escape"){
+        closeImage();
+    }
+
+});
+
+
+/* SHARE FEATURES */
+
+const SITE_URL = "https://neupanehimal05-hash.github.io/neupanehimal05.github.io/";
+
+function showToast(message){
+
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+        toast.classList.remove("show");
+    },2200);
+
+}
+
+function copyLink(url){
+
+    if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(()=>{
+            showToast("Link copied to clipboard!");
+        }).catch(()=>{
+            promptCopy(url);
         });
+    }else{
+        promptCopy(url);
     }
 
-    /* IMAGE LIGHTBOX */
-    function openImage(image) {
-        document.getElementById("lightbox").style.display = "flex";
-        document.getElementById("lightbox-img").src = image;
+}
+
+function promptCopy(url){
+    window.prompt("Copy this link:",url);
+}
+
+/* Share the whole portfolio site */
+function shareSite(){
+
+    const shareData = {
+        title: document.title,
+        text: "Check out my Architecture & Civil Engineering portfolio - AutoCAD, SketchUp, estimation & 3D visualization.",
+        url: SITE_URL
+    };
+
+    if(navigator.share){
+        navigator.share(shareData).catch(()=>{});
+    }else{
+        copyLink(SITE_URL);
     }
 
-    function closeImage() {
-        document.getElementById("lightbox").style.display = "none";
+}
+
+/* Share a single project (uses a #anchor-style link back to the projects section + title) */
+function shareProject(e,title){
+
+    if(e) e.stopPropagation();
+
+    const url = SITE_URL + "#projects";
+
+    const shareData = {
+        title: title ? (title + " - Himal Neupane Portfolio") : document.title,
+        text: title ? ("Check out this project: " + title) : "Check out my portfolio",
+        url: url
+    };
+
+    if(navigator.share){
+        navigator.share(shareData).catch(()=>{});
+    }else{
+        copyLink(url);
     }
 
-    document.getElementById("lightbox").addEventListener("click", function(e) {
-        if (e.target !== document.getElementById("lightbox-img")) {
-            closeImage();
-        }
-    });
+}
 
-    /* SHARE BUTTON FUNCTIONALITY */
-    const shareBtn = document.getElementById('share-btn');
-    shareBtn.addEventListener('click', () => {
-        if (navigator.share) {
-            navigator.share({
-                title: 'Himal Neupane Portfolio',
-                text: 'Check out my Civil Engineering & Architecture portfolio!',
-                url: 'https://neupanehimal05.github.io/neupanehimal05-hash/'
-            })
-            .catch((error) => console.error('Error sharing:', error));
-        } else {
-            navigator.clipboard.writeText('https://neupanehimal05.github.io/neupanehimal05-hash/');
-            alert('Website link copied to clipboard!');
-        }
-    });
 </script>
+
 
 </body>
 </html>
